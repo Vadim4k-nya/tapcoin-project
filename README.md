@@ -54,5 +54,4 @@ comming soosn...
 
 ## Используемые технологии
 
-js + html + css +
-
+js + html + css
