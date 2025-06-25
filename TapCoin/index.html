@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Topcoin Clicker</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./css/style.css">
+    </head>
+    <body class="bg-gray-900 text-white font-inter flex flex-col items-center justify-center min-h-screen p-4 relative">
+        <h1 id="counter" class="text-6xl md:text-8xl font-bold mb-8 select-none">0</h1>
+        
+        <div class="relative mb-8">
+            <img src="./images/faritcoin.png" id="topcoin" draggable="false" 
+                 class="w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full cursor-pointer transition-transform transform hover:scale-105 active:scale-95 shadow-lg">
+            <div id="points-popup-container" class="absolute inset-0 flex items-center justify-center pointer-events-none"></div>
+        </div>
+
+        <button id="boost-button" 
+                class="bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75">
+            Активировать буст!
+        </button>
+
+        <div id="boost-timer" class="mt-4 text-xl font-semibold opacity-0 transition-opacity duration-300">
+            Буст активен: <span id="timer-display"></span> сек.
+        </div>
+
+        <button id="open-coin-modal-button"
+                class="fixed bottom-4 right-4 bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-6 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-opacity-75 z-50 flex items-center justify-center">
+            <img src="./images/changecoin.png" alt="Change Coin" class="w-8 h-8 inline-block">
+        </button>
+
+        <div id="coin-selection-modal" class="hidden fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center z-50 p-4">
+            <div class="bg-gray-800 rounded-lg shadow-xl p-8 max-w-md w-full relative">
+                <h2 class="text-3xl font-bold text-center mb-6">Выбрать монету</h2>
+                <div class="flex flex-wrap justify-center gap-4 mb-6">
+                    <button id="modal-select-faritcoin" 
+                            class="coin-select-btn bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-3 px-6 rounded-full shadow-md transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-opacity-75">
+                        Faritcoin
+                    </button>
+                    <button id="modal-select-topcoin" 
+                            class="coin-select-btn bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-3 px-6 rounded-full shadow-md transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-75">
+                        Topcoin
+                    </button>
+                </div>
+                <button id="close-modal-button"
+                        class="absolute top-4 right-4 text-gray-400 hover:text-gray-200 text-3xl font-bold">
+                    &times;
+                </button>
+            </div>
+        </div>
+
+        <script src="./js/script.js"></script>
+    </body>
+</html>

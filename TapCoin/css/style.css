@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;600;700&display=swap');
+
+/* Basic body styles, largely overridden by Tailwind classes in HTML */
+body {
+    font-family: "Inter", sans-serif; /* Default font, Archivo Black for headings */
+    text-align: center;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+    font-family: "Archivo Black", sans-serif;
+    user-select: none; /* Disable text selection for counter */
+}
+
+/* Specific styles for the coin image */
+#topcoin {
+    border-radius: 50%; /* Ensure it's perfectly round if image allows */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 0 6px 6px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
+    transition: transform 0.1s ease-out, box-shadow 0.1s ease-out; /* Smooth transition for click feedback */
+}
+
+/* Animation for the coin on click */
+#topcoin.clicked {
+    transform: scale(0.98); /* Slightly shrink on click */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2), 0 3px 3px rgba(0, 0, 0, 0.15); /* Smaller shadow on click */
+}
+
+/* Styling for points pop-up */
+.points-popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the popup over the click location */
+    font-size: 2.5rem; /* Larger font size */
+    font-weight: bold;
+    color: #ffd700; /* Gold color for points */
+    opacity: 0;
+    animation: fadeOutUp 1s forwards; /* Animation for fading out and moving up */
+    pointer-events: none; /* Ensures popup doesn't block clicks */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Text shadow for readability */
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+@keyframes fadeOutUp {
+    0% {
+        opacity: 1;
+        transform: translate(-50%, 0) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -100px) scale(1.2); /* Move up and slightly enlarge */
+    }
+}
+
+/* Styles for boost active state */
+.boost-active-glow {
+    box-shadow: 0 0 30px 15px rgba(52, 211, 153, 0.7), /* Green glow for boost */
+                0 0 60px 30px rgba(52, 211, 153, 0.5);
+}
+
+/* Styling for buttons to improve touch target size and visual appeal */
+.coin-select-btn, #boost-button {
+    min-width: 150px; /* Ensure buttons are wide enough */
+    min-height: 50px; /* Ensure buttons are tall enough */
+}
