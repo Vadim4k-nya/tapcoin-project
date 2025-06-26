@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;600;700&display=swap');
+
+body {
+    font-family: "Inter", sans-serif; 
+    text-align: center;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+    font-family: "Archivo Black", sans-serif;
+    user-select: none;
+}
+
+#tapcoin {
+    border-radius: 50%;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 0 6px 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.1s ease-out, box-shadow 0.1s ease-out;
+}
+
+#tapcoin.clicked {
+    transform: scale(0.98);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2), 0 3px 3px rgba(0, 0, 0, 0.15);
+}
+
+.points-popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ffd700;
+    opacity: 0;
+    animation: fadeOutUp 1s forwards;
+    pointer-events: none; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
+    white-space: nowrap;
+}
+
+@keyframes fadeOutUp {
+    0% {
+        opacity: 1;
+        transform: translate(-50%, 0) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -100px) scale(1.2);
+    }
+}
+
+.boost-active-glow {
+    box-shadow: 0 0 30px 15px rgba(52, 211, 153, 0.7),
+                0 0 60px 30px rgba(52, 211, 153, 0.5);
+}
+
+.coin-select-btn, #boost-button {
+    min-width: 150px;
+    min-height: 50px;
+}
